@@ -28,11 +28,13 @@ class ScriptController extends Controller
                     $message['users'] = 'Unable to generate users';
                 }
 
-                // create 3,835 game plays
-                $game_play = \factory(GamePlay::class, 3835)->create();
-                $message['game_play'] = 'Generated GamePlays successfully';
+                
                 $generate_games =  Artisan::call('db:seed');
                 $message['games'] = 'Generated games successfully';
+            
+                // create 3,835 game plays
+                $game_play = \factory(GamePlay::class, 3805)->create();
+                $message['game_play'] = 'Generated GamePlays successfully';
 
 
 
